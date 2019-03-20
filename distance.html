@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- /export/home/cs200/cs200139/Documents/labs/lab5/distance.html     -->
+<!-- Nathan Reichert                                                   -->
+<!-- Section 4                                                         -->
+<!-- Created 9/26/2013                                                 -->
+<!-- Last Edited 9/26/2013                                             -->
+<!-- The purpose of this page is to demonstrate usefulness             -->
+<!-- Of user defined functions to perform math functions               -->
+<!-- ================================================================= -->
+<html>
+    <head>
+        <title>Distance Calculator</title>
+        <script type="text/javascript">
+            function brutalocalypse()
+            // Assumes: The entry of respective x and y values in the text boxes
+            // Results: Calculates the distance between the respective x and y valued points.
+            {
+            x1=parseFloat(document.getElementById('exOne').value);
+                         y1=parseFloat(document.getElementById('whyOne').value);
+                         x2=parseFloat(document.getElementById('exTwo').value);
+                         y2=parseFloat(document.getElementById('whyTwo').value);
+                         px=Math.pow((x1-x2),2);
+                         py=Math.pow((y1-y2),2);
+                         sums=px+py;
+                         distanceCalc=Math.sqrt(sums);
+                         document.getElementById('divOutput').innerHTML=
+                            '<p>The distance between the points ('+
+                            document.getElementById('exOne').value+
+                            ','+
+                            document.getElementById('whyOne').value+
+                            ') and ('+
+                            document.getElementById('exTwo').value+
+                            ','+
+                            document.getElementById('whyTwo').value+
+                            ') is '+
+                            distanceCalc+'.</p>';
+            }
+        </script>
+    </head>
+    <body>
+        <div style="text-align:center">
+            <h2>Distance Calculator</h2>
+        </div>
+        <p>
+            Coordinate 1:(
+            <input type="text" size="8" value="" id="exOne">,
+            <input type="text" size="8" value="" id="whyOne">)
+        </p>
+        <p>
+            Coordinate 2:(
+            <input type="text" size="8" value="" id="exTwo">,
+            <input type="text" size="8" value="" id="whyTwo">)
+        </p>
+            <input type="button" value="Calculate Distance"
+                onclick="brutalocalypse();">
+        <hr>
+        <div id="divOutput"></div>
+    </body>
+</html>
